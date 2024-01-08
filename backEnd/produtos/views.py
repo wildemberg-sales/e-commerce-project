@@ -27,3 +27,14 @@ def productsName(request,nomeproduto):
         return Response(serializer.data)
     except:
         return Response({'error':'Produto não existe'}, status=404)
+    
+@api_view(['POST'])
+def newProduct(request):
+    serializer = ProdutosSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=201)
+    else:
+        return Response("Dado não é valido - erro {}".format(serializer.errors), status=400)
+
+    

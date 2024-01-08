@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 ('idProduto', models.AutoField(primary_key=True, serialize=False)),
                 ('nomeProduto', models.CharField(max_length=255)),
                 ('descricaoProduto', models.TextField()),
-                ('preçoProduto', models.DecimalField(decimal_places=2, max_digits=9)),
+                ('precoProduto', models.DecimalField(decimal_places=2, max_digits=9)),
                 ('urlImagem', models.TextField()),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('update_at', models.DateTimeField(auto_now=True)),
