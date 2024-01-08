@@ -8,10 +8,12 @@ Desenvolvimento de um sistema e-commerce utilizando NextJS e Django
   * npm run dev
  
 ## Django
-  * pip install virtualenv
-  * Entrar no ambiente virtual
-     * Windows:
-      * .\venv\Scripts\active
-  * Iniciar o projeto
-      * Entra na pasta backend
-      * python manager.py runserver
+    * pip install virtualenv
+    * Entrar no ambiente virtual
+        * Windows:
+            * .\<venv>\Scripts\active
+        * Linux:
+            * source <venv>/bin/activate
+    * Iniciar o projeto
+        * Entra na pasta backend
+        * python manager.py runserver
