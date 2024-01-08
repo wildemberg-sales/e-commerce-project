@@ -37,4 +37,26 @@ def newProduct(request):
     else:
         return Response("Dado não é valido - erro {}".format(serializer.errors), status=400)
 
+@api_view(['PATCH']) # Usado para atualizar parcialmente, mas pode ser colocado PUT e usar para atualizar completo
+def updateProduct(request, id):
+    try:
+        product = Produtos.objects.get(idProduto=id)
+    except Produtos.DoesNotExist:
+        return Response({'error':'Produto não encontrado'}, status=404)
     
+    serializer = ProdutosSerializer(product, data=request.data, partial=True)
+    if serializer.is_valid():
+        serializer.save()
+        return Response("Produto atualizado - {}".format(str(serializer.data)), status=200)
+    
+    return Response(serializer.errors, status=400)
+
+@api_view(['DELETE'])
+def deleteProduct(request, id):
+    try:
+        product = Produtos.objects.get(idProduto=id)
+    except Produtos.DoesNotExist:
+        return Response({'error':'Produto não encontrado'}, status=404)
+    
+    product.delete()
+    return Response({'message':'Produto deletado com sucesso'}, status=204)
