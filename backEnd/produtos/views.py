@@ -9,3 +9,21 @@ def allproducts(request):
     produtos = Produtos.objects.all()
     serializer = ProdutosSerializer(produtos, many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def productID(request, id):
+    try:
+        produto = Produtos.objects.get(idProduto=id)
+        serializer = ProdutosSerializer(produto)
+        return Response(serializer.data)
+    except:
+        return Response({'error':'Produto não existe'}, status=404)
+
+@api_view(['GET'])
+def productsName(request,nomeproduto):
+    try:
+        produtos = Produtos.objects.filter(nomeProduto__icontains=nomeproduto)
+        serializer = ProdutosSerializer(produtos, many=True)
+        return Response(serializer.data)
+    except:
+        return Response({'error':'Produto não existe'}, status=404)
