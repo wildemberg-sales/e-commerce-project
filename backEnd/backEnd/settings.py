@@ -25,10 +25,7 @@ SECRET_KEY = 'django-insecure-t840$=(j3uds2-#9)x&+xomyt!c4*wki&16yv8yz$w)r9g(yv#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '.vercel.app',
-    '.now.sh'
-]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -122,8 +119,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR/'static',]
-STATIC_ROOT = BASE_DIR/'staticfiles'
+MEDIA_URL = 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
