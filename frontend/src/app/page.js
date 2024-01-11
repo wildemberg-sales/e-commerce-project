@@ -10,6 +10,9 @@ import React from 'react'
 export default function Home() {
 const [data, setData]=React.useState([]);
 
+// Utilizado para chamar funções automaticamente ao renderizar a página
+// Muito utilizado para busca de dados automática
+// Coloca o axios aqui dentro sem função para ele só chamar
 React.useEffect(()=>{
   getAllProdutos()
 }, [])
@@ -40,7 +43,7 @@ function mostrar(){
           })
         }
       </div>
-      <button onClick={mostrar}> clique aqui </button>
+      <button onClick={mostrar}> clique aqui para mostrar os dados no console e testar</button>
     </div>
     )
 }
