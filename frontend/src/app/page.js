@@ -10,6 +10,10 @@ import React from 'react'
 export default function Home() {
 const [data, setData]=React.useState([]);
 
+React.useEffect(()=>{
+  getAllProdutos()
+}, [])
+
 async function getAllProdutos(){
   await axios.get('https://back-end-ecommerce-xi7j.onrender.com/produtos/')
   .then((res)=>{
@@ -19,10 +23,24 @@ async function getAllProdutos(){
   }).catch((error)=>console.log(error));
 };
 
+function mostrar(){
+  console.log(data)
+}
+
   return(
     <div>
       <Header></Header>
-      <button onClick={getAllProdutos}> clique aqui </button>
+      <div>
+        {
+          // percorre o nosso array de dados e pega os valores
+          data.map((val, index)=>{
+            return(
+              <p>{index} - {val.nomeProduto} : {val.precoProduto}</p>
+            )
+          })
+        }
+      </div>
+      <button onClick={mostrar}> clique aqui </button>
     </div>
     )
 }
