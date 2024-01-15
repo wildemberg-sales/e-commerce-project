@@ -4,6 +4,7 @@ import styles from './page.module.css'
 import Header from './header/Header'
 import axios from 'axios'
 import React from 'react'
+import Banner from './banner/banner';
 // import {useState} from 'react'
 
 
@@ -33,6 +34,7 @@ function mostrar(){
   return(
     <div>
       <Header></Header>
+      <Banner></Banner>
       <div>
         {
           // percorre o nosso array de dados e pega os valores

@@ -4,6 +4,7 @@
   background-color: rgb(49, 159, 2);
   justify-content: space-between;
   border-radius:5px ;
+  margin-bottom: 25px;
 }
 
 .home{
@@ -36,6 +37,7 @@ form{
 display: flex;
 flex-direction: column;
 align-items: center ;
+flex-direction: row;
 }
 
 form input, form textarea{
@@ -56,10 +58,10 @@ input::-webkit-input-placeholder {
   }
 
 form button{
-  color: white;
-  background-color: rgb(47, 123, 29);
+  color: black;
+  background-color: rgb(255, 255, 255);
   margin: 5px;
   border-radius: 4px;
-  width: 80px;
+  width: 60px;
   height: 20px;
 }
