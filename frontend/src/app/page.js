@@ -1,51 +1,27 @@
 "use client";
 import Image from 'next/image'
 import styles from './page.module.css'
-import Header from './header/Header'
+import Header from './components/header/Header'
+import Banner from './components/banner/banner';
+import Products from './components/produtos/Produto';
 import axios from 'axios'
 import React from 'react'
-import Banner from './banner/banner';
 // import {useState} from 'react'
 
 
 export default function Home() {
-const [data, setData]=React.useState([]);
+
 
 // Utilizado para chamar funções automaticamente ao renderizar a página
 // Muito utilizado para busca de dados automática
 // Coloca o axios aqui dentro sem função para ele só chamar
-React.useEffect(()=>{
-  getAllProdutos()
-}, [])
 
-async function getAllProdutos(){
-  await axios.get('https://back-end-ecommerce-xi7j.onrender.com/produtos/')
-  .then((res)=>{
-    // salva os dados na variavel data
-    setData(res.data);
-    console.log(data)
-  }).catch((error)=>console.log(error));
-};
-
-function mostrar(){
-  console.log(data)
-}
 
   return(
     <div>
       <Header></Header>
       <Banner></Banner>
-      <div>
-        {
-          // percorre o nosso array de dados e pega os valores
-          data.map((val, index)=>{
-            return(
-              <p>{index} - {val.nomeProduto} : {val.precoProduto}</p>
-            )
-          })
-        }
-      </div>
-      <button onClick={mostrar}> clique aqui para mostrar os dados no console e testar</button>
+      <Products></Products>
     </div>
     )
 }
