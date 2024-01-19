@@ -1,0 +1,10 @@
+.container{
+  display: flex;
+  background-color:  rgb(49, 159, 2);
+  margin-top: 30px;
+}
+
+.links{
+display: grid;
+grid-template-columns: 0.3fr 0.3fr;
+}
