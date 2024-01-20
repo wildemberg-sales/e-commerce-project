@@ -27,7 +27,8 @@ export default function Products(){
           data.map((val, index)=>{
             return(
               <div className='dataProduct'>
-              <p>{index}</p>
+              {/* <p>{index}</p> */}
+              <img srcSet={`${val.urlImagem}`} className='imgProduct'/>
               <p>{val.nomeProduto}</p>
               <p>{val.precoProduto}</p>
               </div>  

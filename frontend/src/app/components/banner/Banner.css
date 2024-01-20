@@ -19,7 +19,7 @@
   display: block;
   width: 100%;
   height: 100%;
- max-width: 850;
- max-height:450;
-  object-fit: cover;
+ max-width: 850px;
+ max-height:350px;
+ margin-bottom: 35px;
 }
