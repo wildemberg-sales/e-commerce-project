@@ -1,0 +1,67 @@
+.all{
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(49, 159, 2);
+  justify-content: space-between;
+  border-radius:5px ;
+  margin-bottom: 25px;
+}
+
+.home{
+  display: flex;
+  align-items: center ;
+  justify-content: center;
+  margin-left: 15px;
+  gap: 5px;
+}
+
+.imagemHome{
+  max-width: 50px;
+}
+.links{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form{
+display: flex;
+flex-direction: column;
+align-items: center ;
+flex-direction: row;
+}
+
+form input, form textarea{
+  background-color: rgb(47, 123, 29);
+  color: black;
+  padding-right: 120px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 7px;
+  border-color: rgb(5, 65, 18);
+  outline: unset;
+  margin-top: 7px;
+}
+
+input::-webkit-input-placeholder {
+  color: rgb(0, 0, 0) !important;
+  }
+
+form button{
+  color: black;
+  background-color: rgb(255, 255, 255);
+  margin: 5px;
+  border-radius: 4px;
+  width: 60px;
+  height: 20px;
+}
