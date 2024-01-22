@@ -13,8 +13,8 @@ export default function Products(){
     await axios.get('https://back-end-ecommerce-xi7j.onrender.com/produtos/')
     .then((res)=>{
       setData(res.data);
-      console.log(data)
-    }).catch((error)=>console.log(error));
+      // console.log(data)
+    }).catch((error)=>window.alert(error));
   };
   
   function mostrar(){
