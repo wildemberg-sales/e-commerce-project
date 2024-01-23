@@ -25,10 +25,7 @@ SECRET_KEY = 'django-insecure-t840$=(j3uds2-#9)x&+xomyt!c4*wki&16yv8yz$w)r9g(yv#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    '.vercel.app',
-    '.now.sh'
-]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -42,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'produtos',
     'pagamento',
-    'usuarios'
+    'usuarios',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -53,7 +51,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware'
 ]
+
+
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:3000',
+# ]
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'backEnd.urls'
 
@@ -122,8 +128,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR/'static',]
-STATIC_ROOT = BASE_DIR/'staticfiles'
+MEDIA_URL = 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
