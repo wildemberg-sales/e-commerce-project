@@ -1,9 +1,9 @@
 "use client";
 import styles from './page.module.css'
-import Header from './components/header/Header'
-import Banner from './components/banner/banner';
-import Products from './components/produtos/Produto';
-import Footer from './components/footer/Footer';
+import Header from '@/components/header/Header';
+import Products from '@/components/produtos/Produto';
+import Banner from '@/components/banner/banner';
+import Footer from '@/components/footer/Footer';
 import axios from 'axios'
 import React from 'react'
 // import {useState} from 'react'
